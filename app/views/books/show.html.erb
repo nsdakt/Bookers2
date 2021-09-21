@@ -1,15 +1,6 @@
-<main>
-  <p id="notice"></p>
-  <h2>User info</h2>
+　<%= render 'users/user_info', user: @user %>
 
-  <h2>New book</h2>
-  <%= form_with model: @book, local:true do |f| %>
-    <label>Title</label><br/>
-    <%= f.text_field :title %><br/>
-    <label>Opinion</label><br/>
-    <%= f.text_area :opinion %><br/>
-    <%= f.submit 'Create Book' %>
-  <% end %>
+  <%= render 'books/form', book: @book_new %>
 
   <h2>Book detail</h2>
   <table>
@@ -22,5 +13,4 @@
         <td><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "Are you sure？"  %></td>
       </tr>
     </tbody>
-</table>
-</main>
+  </table>
