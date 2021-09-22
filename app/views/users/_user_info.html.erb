@@ -5,16 +5,18 @@
     <tr></tr>
     <tr>
       <th>name</th>
-      <%= user.name %>
+      <th><%= user.name %></th>
     </tr>
     <tr>
       <th>introduction</th>
-      <%= user.introduction %>
+      <th><%= user.introduction %></th>
     </tr>
   </tbody>
 </table>
 <div class="row">
   <% if user.id == current_user.id %>
-    <p><%= link_to "  ", edit_user_path(user), class: "btn btn-outline-secondary btn-block fas fa-user-cog" %></p>
+    <p>
+      <%= link_to " ", edit_user_path(user), class: "btn btn-outline-secondary btn-block fas fa-user-cog" %>
+    </p>
   <% end %>
 </div>
