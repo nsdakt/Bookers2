@@ -11,11 +11,11 @@
           <tbody>
             <tr>
               <td>
-               <%= attachment_image_tag @book.user, :image, :fill, 20, 20, format: 'jpeg', fallback: "no_image.jpg" %><br/>
+               <%= attachment_image_tag @book.user, :profile_image, :fill, 20, 20, format: 'jpeg', fallback: "no_image.jpg" %><br/>
                <%= link_to @book.user.name, user_path(@book.user) %>
               </td>
               <td><%= link_to @book.title, @book %></td>
-              <td><%= @book.opinion %></td>
+              <td><%= @book.body %></td>
                 <% if @user.id == current_user.id %>
                  <td><%= link_to "Edit", edit_book_path(@book), class: "btn btn-sm btn-success" %></td>
                  <td><%= link_to "Destroy", book_path, method: :delete, "data-confirm" => "本当に消しますか？", class: "btn btn-sm btn-danger"  %></td>
