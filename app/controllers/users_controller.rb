@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit, :update, :following, :follwers]
 
   def index
    @users = User.all
@@ -30,6 +30,17 @@ class UsersController < ApplicationController
    else
     render :edit
    end
+  end
+
+
+  def follows
+    user = User.find(params[:id])
+    @users = user.followings
+  end
+
+  def followers
+    user = User.find(params[:id])
+    @users = user.followers
   end
 
   private
