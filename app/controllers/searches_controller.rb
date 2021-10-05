@@ -14,7 +14,7 @@ class SearchesController < ApplicationController
       else
         User.where('name LIKE ?', '%'+content+'%')
       end
-    elsif model =='book'
+    elsif model == 'book'
       if method == 'perfect'
         Book.where(title: content)
       else
