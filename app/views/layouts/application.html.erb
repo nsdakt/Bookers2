@@ -56,7 +56,9 @@
           </div>
         </div>
       </nav>
-      <%= render 'searches/searches_form' %>
+      <% unless controller.controller_name == 'homes' && controller.action_name == 'top' %>
+       <div class="center"><%= render 'searches/searches_form' %></div>
+      <% end %>
     </header>
 
     <%= yield %>
