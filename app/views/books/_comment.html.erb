@@ -19,8 +19,8 @@
   </table>
 
   <div>
-    <%= form_with model:[@book, @book_comment], local: true do |f| %>
-     <%= f.text_area :comment, size:"90x5" %>
+    <%= form_with model:[book, book_comment] do |f| %>
+     <%= f.text_area :comment, size:"90x5", class: "inputComment" %>
      <%= f.submit "送信" %>
     <% end %>
   </div>
